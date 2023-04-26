@@ -1,0 +1,65 @@
+# Site settings
+title:       "Explainercast"
+head_title:  "The Explainercast Podcast" # for the <title> element
+email:       dave@thesmithfam.org
+author:      "Shane Swenson and Dave Smith"
+description: "Explaining things"
+baseurl:     ""
+url:         "https://explainercast.com"
+date_format: "%b %-d, %Y"
+logo_url: "https://download.explainercast.com/explainercast-logo.png"
+og_image_url: "https://download.explainercast.com/avatar1.png"
+podcast_feed_url: "https://explainercast.com/feed.xml"
+podcast_itunes_url: "https://itunes.apple.com/us/podcast/explainercast/TODO?mt=2"
+podcast_android_url: "https://subscribeonandroid.com/explainercast.com/feed.xml"
+podcast_google_url: "https://www.google.com/podcasts?feed=TODO"
+podcast_cover_art_url: "https://download.explainercast.com/explainercast-cover-art.png"
+podcast_spotify_url: "https://open.spotify.com/show/TODO?si=TODO"
+
+text:
+  pagination:
+    newer: 'Newer'
+    older: 'Older'
+  share_buttons:
+    text:         'Share this post!'
+    facebook:     'Share on Facebook'
+    twitter:      'Share on Twitter'
+    googleplus:   'Share on Google+'
+    linkedin:     'Share on LinkedIn'
+    digg:         'Share on Digg'
+    tumblr:       'Share on Tumblr'
+    reddit:       'Share on Reddit'
+    stumbleupon:  'Share on StumbleUpon'
+    hackernews:   'Share on Hacker News'
+  post:
+    updated:        'Updated'
+    minute_read:    'minute read'
+    related_posts:  'Related Posts'
+  index:
+    coming_soon: 'Coming soon...'
+  contact:
+    email:    'Email Address'
+    content:  'What would you like to say?'
+    subject:  'New submission!'
+    submit:   'Say Hello'
+    ajax:
+      sending:  'sending..'
+      sent:     'Message sent!'
+      error:    'Error!'
+  og_locale: 'en_US'
+
+# Build settings
+markdown:     kramdown
+redcarpet:
+  extensions: ['smart', 'tables', 'with_toc_data']
+permalink:    "/:year/:month/:day/:title/"
+paginate:     10
+sass:
+  compressed: true
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-mentions
+  - jekyll-redirect-from
+# https://github.com/jekyll/jekyll/issues/2938
+exclude: [vendor, ve, scripts, dev.sh, '*auth.json', 'Gemfile*', .editorconfig, '*.rb', Rakefile]
