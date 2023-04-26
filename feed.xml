@@ -11,9 +11,9 @@ layout: null
 
     <language>en</language>
     <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <managingEditor>Jamison Dance and Dave Smith</managingEditor>
-    <webMaster>Jamison Dance and Dave Smith</webMaster>
-    <copyright>2016 Jamison Dance and Dave Smith</copyright>
+    <managingEditor>Shane Swenson and Dave Smith</managingEditor>
+    <webMaster>Shane Swenson and Dave Smith</webMaster>
+    <copyright>2023 Shane Swenson and Dave Smith</copyright>
     <lastBuildDate>{{ site.posts.first.date }}</lastBuildDate>
     <itunes:explicit>no</itunes:explicit>
     <image>
@@ -24,10 +24,10 @@ layout: null
 
     <itunes:new-feed-url>{{ site.podcast_feed_url }}</itunes:new-feed-url>
     <itunes:subtitle>{{ site.description | xml_escape }}</itunes:subtitle>
-    <itunes:author>Jamison Dance and Dave Smith</itunes:author>
+    <itunes:author>Shane Swenson and Dave Smith</itunes:author>
     <itunes:keywords></itunes:keywords>
     <itunes:owner>
-      <itunes:name>Jamison Dance and Dave Smith</itunes:name>
+      <itunes:name>Shane Swenson and Dave Smith</itunes:name>
       <itunes:email>soft-skills-engineering@googlegroups.com</itunes:email>
     </itunes:owner>
     <itunes:image href="{{ site.podcast_cover_art_url }}"></itunes:image>
