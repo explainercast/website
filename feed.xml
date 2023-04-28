@@ -28,7 +28,7 @@ layout: null
     <itunes:keywords></itunes:keywords>
     <itunes:owner>
       <itunes:name>Shane Swenson and Dave Smith</itunes:name>
-      <itunes:email>soft-skills-engineering@googlegroups.com</itunes:email>
+      <itunes:email>explainercast-hosts@googlegroups.com</itunes:email>
     </itunes:owner>
     <itunes:image href="{{ site.podcast_cover_art_url }}"></itunes:image>
     <itunes:category text="Technology" />
