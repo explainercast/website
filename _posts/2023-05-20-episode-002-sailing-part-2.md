@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 2: Sailing part 2 of 2"
-date: 2023-05-20 12:00:00 -0700
+date: 2023-05-20 08:00:00 -0700
 guid: 1d7c9a7b-014b-4f98-94f3-66f151966e3f
 duration: "58:40"
 length: 84483648
