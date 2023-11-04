@@ -7,7 +7,7 @@ Make sure your mp3 file is named like this: explainercast-NNN.mp3 (3 digits, zer
 
 Usage:
 
-    python3 path/to/explainercast-NNN.mp3 --force-overwrite
+    python3 /path/to/explainercast-NNN.mp3 --force-overwrite
 
 """
 import sys, os, re, uuid, subprocess
@@ -15,7 +15,7 @@ import sys, os, re, uuid, subprocess
 from datetime import datetime
 
 SSH_HOST = 'dave@thesmithfam.org'
-SSH_SERVER_DIR = '/home/vhosts/thesmithfam.org/podcasts'
+SSH_SERVER_DIR = '/home/vhosts/thesmithfam.org/podcasts/explainercast'
 
 POST_MARKDOWN_TEMPLATE = \
 """
