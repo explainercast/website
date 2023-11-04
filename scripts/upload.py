@@ -101,6 +101,11 @@ def write_post_markdown(mp3_file_path, force_overwrite):
   with open(post_file_path, 'w') as f:
     f.write(episode_markdown)
 
+  print(f'Next steps:')
+  print(f'  git add {post_file_path}')
+  print(f'  git commit -m "Episode {episode_number}"')
+  print(f'  git push origin gh-pages')
+
 
 def calculate_mp3_duration(mp3_file_path):
   ret = subprocess.run(['mp3info', '-p', '%m:%02s', mp3_file_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
