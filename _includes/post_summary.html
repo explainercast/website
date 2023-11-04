@@ -1,0 +1,18 @@
+{% capture playback_url %}{{ post.file }}{% endcapture %}
+{% capture playback_guid %}{{ post.guid }}{% endcapture %}
+
+<article class="post">
+  <h1 class="post-title">{{ post.title }}</h1>
+
+  <p class="post-meta"><time class="post-timestamp">{{ post.date | date: site.date_format }}</time></p>
+
+  {% if include.show_details %}
+    {% if post.file %}
+      {% include audio_player.html playback_url=playback_url playback_guid=playback_guid %}
+    {% endif %}
+
+    <div class="post-summary" markdown="1">
+      {{ post.content }}
+    </div>
+  {% endif %}
+</article>

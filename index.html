@@ -10,6 +10,54 @@ title: "Explainercast: A podcast that explains things"
     border-radius: 6px;
     height: 40px;
   }
+
+  .post {
+    margin-bottom: 40px;
+    margin-top: 10px;
+  }
+
+  .post-meta {
+      margin: var(--double-space) 0 var(--space);
+      font-size: 80%;
+      color: #444;
+  }
+
+  h1.post-title {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  .post-link {
+      text-decoration: none;
+      color: var(--font-color)
+  }
+
+  .audio-player audio {
+      width: 100%
+  }
+
+  .audio-player {
+      display: flex;
+      align-items: center;
+      flex-flow: row wrap;
+      margin: var(--double-space) 0 0;
+      width: 100%;
+      padding-right: 1rem;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+
+  .audio-player audio {
+    width: 80%;
+  }
+
+  .audio-player a {
+      display: inline-block;
+      padding: .5rem 1rem;
+      font-size: 70%;
+      font-weight: var(--font-medium)
+  }
+
  </style>
 
 <div style="text-align: center; font-size: 20px">
@@ -27,8 +75,6 @@ title: "Explainercast: A podcast that explains things"
 
   <a href="https://open.spotify.com/show/4pOjU3hW07Oks6bzPGwXvE"><img class="subscribe-badge" src="/img/listen-on-spotify.png" /></a>
 
-  
-
   <p style="max-width: 50%; margin-left: auto; margin-right: auto; text-align: left">
     This podcast explains how things work, from the minds of two engineers. Our promise is we
     will only present topics we know well. No faking!
@@ -41,5 +87,12 @@ title: "Explainercast: A podcast that explains things"
       <li style="margin-top: 30px"><b>Search for "Explainercast"</b> in your podcasting app, like Spotify, Apple Podcasts, Google Podcasts, or any other app</li>
       <li style="margin-top: 30px">Or <b>subscribe to the feed URL</b>: <pre>{{site.podcast_feed_url}}</pre></li>
     </ul>
+
+    <h1>Episodes</h1>
+    <div class="episode-list">
+      {% for post in paginator.posts %}
+        {% include post_summary.html show_details="True" %}
+    {% endfor %}
+    </div>
   </div>
 </div>

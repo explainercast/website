@@ -1,0 +1,13 @@
+<figure class="audio-player">
+  <audio
+    src="{{ playback_url }}?website_player=true"
+    preload="none"
+    controls="true"
+    type="audio/mp3"
+    id="audio-{{ playback_guid }}"
+    data-id="{{ playback_guid }}">
+    Your browser doesn't support the <code>audio</code> element.
+  </audio>
+
+  <a href="{{ playback_url }}?website_download=true">Download</a>
+</figure>
