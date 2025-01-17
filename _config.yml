@@ -3,7 +3,7 @@ title:       "Explainercast"
 head_title:  "The Explainercast Podcast" # for the <title> element
 email:       dave@thesmithfam.org
 author:      "Shane Swenson and Dave Smith"
-description: "Explaining things"
+description: "A podcast of deep, thorough explanations about physics, engineering, and technology"
 baseurl:     ""
 url:         "https://explainercast.com"
 date_format: "%b %-d, %Y"
