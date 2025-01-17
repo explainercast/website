@@ -13,7 +13,7 @@ podcast_itunes_url: "https://itunes.apple.com/us/podcast/explainercast/TODO?mt=2
 podcast_android_url: "https://subscribeonandroid.com/explainercast.com/feed.xml"
 podcast_google_url: "https://www.google.com/podcasts?feed=TODO"
 podcast_cover_art_url: "https://download.explainercast.com/explainercast-cover-art.jpg"
-podcast_spotify_url: "https://open.spotify.com/show/TODO?si=TODO"
+podcast_spotify_url: "https://open.spotify.com/show/4pOjU3hW07Oks6bzPGwXvE"
 
 text:
   pagination:
@@ -52,7 +52,7 @@ markdown:     kramdown
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    "/:year/:month/:day/:title/"
-paginate:     10
+paginate:     100
 sass:
   compressed: true
 plugins:
