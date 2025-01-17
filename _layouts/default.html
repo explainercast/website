@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
-    <meta name="description" content="A podcast of deep, thorough explanations about physics, engineering, and technology" />
+    <meta name="description" content="{{ site.description }}" />
     <meta name="robots" content="all" />
     <meta name="author" content="Shane Swenson and Dave Smith" />
     <link rel="alternate" type="application/rss+xml" title="RSS podcast feed for Explainercast" href="/feed.xml" />
@@ -11,6 +11,7 @@
     <meta property="og:title" content="{{ page.title }}" />
     <meta property="og:description" content="{{ site.description }}" />
     <meta property="og:image" content="{{ site.hero_image_url }}" />
+    <meta property="twitter:title" content="{{ page.title }}" />
     <meta property="twitter:image" content="{{ site.hero_image_url }}" />
     <meta property="twitter:description" content="{{ site.description }}" />
 
