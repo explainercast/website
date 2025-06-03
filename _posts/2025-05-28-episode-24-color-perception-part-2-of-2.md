@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 24: Color Perception Part 2 of 2"
-date: 2025-05-27 06:00:00 -0700
+date: 2025-05-28 06:00:00 -0700
 guid: f0ba131c-a652-4eae-ad34-521f80d33f5b
 duration: "37:52"
 length: 32258192
