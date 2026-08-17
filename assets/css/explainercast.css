@@ -812,6 +812,16 @@ pre, code { font-family: var(--font-mono); }
 }
 .toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
 
+/* --- 404 ---------------------------------------------------------------- */
+.notfound {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block-start: 7rem;
+}
+.notfound .hero__title { margin-bottom: .5rem; }
+
 /* --- Responsive --------------------------------------------------------- */
 @media (max-width: 940px) {
   .hero {

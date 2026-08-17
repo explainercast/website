@@ -1,11 +1,5 @@
 <figure class="audio-player">
-  <audio
-    src="{{ playback_url }}?website_player=true"
-    preload="none"
-    controls="true"
-    type="audio/mp3"
-    id="audio-{{ playback_guid }}"
-    data-id="{{ playback_guid }}">
+  <audio src="{{ include.playback_url }}?website_player=true" preload="none" controls>
     Your browser doesn't support the <code>audio</code> element.
   </audio>
 
@@ -37,7 +31,7 @@
           <i></i><i></i><i></i><i></i><i></i>
         </span>
 
-        <a class="ap__dl" href="{{ playback_url }}?website_download=true">
+        <a class="ap__dl" href="{{ include.playback_url }}?website_download=true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5"/>
             <path d="M4 20h16"/>

@@ -138,7 +138,7 @@
     }
   }
 
-  function draw(time) {
+  function draw() {
     ctx.clearRect(0, 0, W, H);
 
     var link = CFG.link;
@@ -216,7 +216,7 @@
     var dt = last ? Math.min(time - last, 48) : 16;
     last = time;
     step(dt);
-    draw(time);
+    draw();
   }
 
   /* --- input ------------------------------------------------------------ */
@@ -264,7 +264,7 @@
   resize();
 
   if (reduce.matches) {
-    draw(0);                     // one static frame, no motion
+    draw();                     // one static frame, no motion
   } else {
     rafId = requestAnimationFrame(frame);
   }
@@ -273,7 +273,7 @@
     if (e.matches) {
       cancelAnimationFrame(rafId);
       rafId = null;
-      draw(0);
+      draw();
     } else if (!rafId) {
       last = 0;
       rafId = requestAnimationFrame(frame);
