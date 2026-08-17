@@ -1,0 +1,52 @@
+---
+layout: default
+---
+{%- comment -%}
+  Every episode already has its own URL (see `permalink` in _config.yml) and is
+  listed in sitemap.xml, so these pages were being crawled regardless. Without
+  this layout they rendered as a bare paragraph: no <h1>, no date, no player.
+{%- endcomment -%}
+<article class="shell shell--read section episode-page">
+  <p class="crumb"><a href="/#episodes">&larr; All episodes</a></p>
+
+  <h1 class="post-title episode-page__title">{{ page.title }}</h1>
+
+  <p class="post-meta">
+    <span class="chip">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="16" rx="2.5"/>
+        <path d="M3 10h18M8 3v4M16 3v4"/>
+      </svg>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.date_format }}</time>
+    </span>
+
+    {% if page.duration %}
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 7.5V12l3.2 2"/>
+        </svg>
+        {{ page.duration }}
+      </span>
+    {% endif %}
+  </p>
+
+  {% if page.file %}
+    {% include audio_player.html playback_url=page.file duration=page.duration %}
+  {% endif %}
+
+  <div class="post-summary">
+    {{ content }}
+  </div>
+
+  <div class="episode-page__subscribe">
+    <h2>Subscribe to Explainercast</h2>
+    <p>Deep, thorough explanations about physics, engineering, and technology &mdash; every episode.</p>
+    <div class="subscribe">
+      <a class="sub-btn sub-btn--apple" href="{{ site.podcast_itunes_url }}">Apple Podcasts</a>
+      <a class="sub-btn sub-btn--youtube" href="{{ site.podcast_youtube_url }}">YouTube</a>
+      <a class="sub-btn sub-btn--spotify" href="{{ site.podcast_spotify_url }}">Spotify</a>
+      <a class="sub-btn sub-btn--rss" href="{{ site.podcast_feed_url }}">RSS</a>
+    </div>
+  </div>
+</article>

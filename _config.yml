@@ -1,6 +1,7 @@
 # Site settings
 title:       "Explainercast"
 description: "A podcast of deep, thorough explanations about physics, engineering, and technology"
+podcast_authors: "Shane Swenson and Dave Smith"
 baseurl:     ""
 url:         "https://explainercast.com"
 date_format: "%b %-d, %Y"

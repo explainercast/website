@@ -1,0 +1,83 @@
+{%- comment -%}
+  Schema.org JSON-LD.
+
+  Always emits the PodcastSeries + WebSite entities. The homepage additionally
+  emits every episode as a PodcastEpisode; an episode page emits just its own.
+
+  Durations in post front matter are written MM:SS (values over an hour are
+  carried in the minutes field, e.g. "71:02"), so they convert to PT{M}M{S}S.
+  Anything that does not split on ":" is skipped rather than guessed at.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "PodcastSeries",
+      "@id": {{ site.url | append: '/#podcast' | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "url": {{ site.url | append: '/' | jsonify }},
+      "description": {{ site.description | jsonify }},
+      "image": {{ site.podcast_cover_art_url | jsonify }},
+      "thumbnailUrl": {{ site.hero_image_url | jsonify }},
+      "webFeed": {{ site.podcast_feed_url | jsonify }},
+      "inLanguage": "en-US",
+      "genre": ["Technology", "Science", "Education"],
+      "keywords": "physics, engineering, technology, science explainers, deep dives",
+      "numberOfEpisodes": {{ site.posts | size }},
+      "author": [
+        { "@type": "Person", "name": "Shane Swenson" },
+        { "@type": "Person", "name": "Dave Smith" }
+      ],
+      "producer": [
+        { "@type": "Person", "name": "Shane Swenson" },
+        { "@type": "Person", "name": "Dave Smith" }
+      ],
+      "sameAs": [
+        {{ site.podcast_itunes_url | jsonify }},
+        {{ site.podcast_spotify_url | jsonify }},
+        {{ site.podcast_youtube_url | jsonify }}
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": {{ site.url | append: '/#website' | jsonify }},
+      "url": {{ site.url | append: '/' | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "description": {{ site.description | jsonify }},
+      "inLanguage": "en-US",
+      "publisher": { "@id": {{ site.url | append: '/#podcast' | jsonify }} }
+    }
+    {%- if page.layout == 'post' -%}
+      {%- assign schema_posts = '' | split: '' | push: page -%}
+    {%- else -%}
+      {%- assign schema_posts = site.posts -%}
+    {%- endif -%}
+    {%- for post in schema_posts -%}
+      {%- assign dparts = post.duration | split: ':' -%}
+    ,
+    {
+      "@type": "PodcastEpisode",
+      "@id": {{ post.url | absolute_url | append: '#episode' | jsonify }},
+      "url": {{ post.url | absolute_url | jsonify }},
+      "name": {{ post.title | jsonify }},
+      "description": {{ post.content | strip_html | strip_newlines | truncate: 300 | strip | jsonify }},
+      "datePublished": {{ post.date | date_to_xmlschema | jsonify }},
+      "inLanguage": "en-US",
+      {%- if dparts.size == 2 %}
+      "timeRequired": {{ 'PT' | append: dparts[0] | append: 'M' | append: dparts[1] | append: 'S' | jsonify }},
+      {%- elsif dparts.size == 3 %}
+      "timeRequired": {{ 'PT' | append: dparts[0] | append: 'H' | append: dparts[1] | append: 'M' | append: dparts[2] | append: 'S' | jsonify }},
+      {%- endif %}
+      "associatedMedia": {
+        "@type": "AudioObject",
+        "contentUrl": {{ post.file | jsonify }},
+        "encodingFormat": "audio/mpeg"{% if post.length %},
+        "contentSize": {{ post.length | append: '' | jsonify }}{% endif %}
+      },
+      "partOfSeries": { "@id": {{ site.url | append: '/#podcast' | jsonify }} }
+    }
+    {%- endfor %}
+  ]
+}
+</script>

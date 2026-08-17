@@ -525,6 +525,25 @@ pre, code { font-family: var(--font-mono); }
   font-size: clamp(1.22rem, 2.4vw, 1.55rem);
   letter-spacing: -.025em;
 }
+.post-title a {
+  color: inherit;
+  transition: color .25s ease;
+}
+.post-title a:hover { color: var(--c-cyan); }
+
+/* arrow slides in on hover; hidden from the accessible name */
+.post-title__arrow {
+  display: inline-block;
+  margin-left: .4em;
+  opacity: 0;
+  transform: translateX(-.3em);
+  transition: opacity .3s var(--ease-out), transform .3s var(--ease-out);
+}
+.post-title a:hover .post-title__arrow,
+.post-title a:focus-visible .post-title__arrow {
+  opacity: 1;
+  transform: none;
+}
 
 .post-meta {
   display: flex;
@@ -812,13 +831,43 @@ pre, code { font-family: var(--font-mono); }
 }
 .toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
 
+/* --- Episode page ------------------------------------------------------- */
+/* .section wins on specificity, so match it to clear the fixed nav */
+.section.episode-page { padding-block-start: 7.5rem; }
+
+.crumb {
+  margin-bottom: 1.25rem;
+  font-size: .88rem;
+}
+.crumb a { color: var(--text-mute); }
+.crumb a:hover { color: var(--c-cyan); }
+
+.episode-page__title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  text-wrap: balance;
+}
+
+.episode-page__subscribe {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--hairline);
+}
+.episode-page__subscribe h2 {
+  font-size: 1.3rem;
+  margin-bottom: .5rem;
+}
+.episode-page__subscribe p {
+  color: var(--text-mute);
+  font-size: .95rem;
+}
+
 /* --- 404 ---------------------------------------------------------------- */
-.notfound {
+.section.notfound {
   min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-block-start: 7rem;
+  padding-block-start: 7.5rem;
 }
 .notfound .hero__title { margin-bottom: .5rem; }
 

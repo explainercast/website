@@ -1,5 +1,7 @@
 <article class="card post">
-  <h1 class="post-title">{{ post.title }}</h1>
+  <h3 class="post-title">
+    <a href="{{ post.url | relative_url }}">{{ post.title }}<span class="post-title__arrow" aria-hidden="true">&rarr;</span></a>
+  </h3>
 
   <p class="post-meta">
     <span class="chip">
@@ -7,7 +9,7 @@
         <rect x="3" y="5" width="18" height="16" rx="2.5"/>
         <path d="M3 10h18M8 3v4M16 3v4"/>
       </svg>
-      <time>{{ post.date | date: site.date_format }}</time>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: site.date_format }}</time>
     </span>
 
     {% if post.duration %}
