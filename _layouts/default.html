@@ -1,12 +1,16 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }}</title>
     <meta name="description" content="{{ site.description }}" />
     <meta name="robots" content="all" />
     <meta name="author" content="Shane Swenson and Dave Smith" />
+    <meta name="theme-color" content="#070b16" />
     <link rel="alternate" type="application/rss+xml" title="RSS podcast feed for Explainercast" href="/feed.xml" />
+    <link rel="icon" type="image/svg+xml" href="/img/logo.svg" />
+    <link rel="apple-touch-icon" href="{{ site.hero_image_url }}" />
 
     <meta property="og:title" content="{{ page.title }}" />
     <meta property="og:description" content="{{ site.description }}" />
@@ -15,14 +19,68 @@
     <meta property="twitter:image" content="{{ site.hero_image_url }}" />
     <meta property="twitter:description" content="{{ site.description }}" />
 
-    <style>
-    body {
-      font-family: arial;
-      background: #def;
-    }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Named explainercast.css, not style.css: the github-pages gem pulls in
+         jekyll-theme-primer, whose assets/css/style.scss also builds to
+         /assets/css/style.css and would overwrite this file. -->
+    <link rel="stylesheet" href="/assets/css/explainercast.css?v={{ site.time | date: '%s' }}">
   </head>
+
   <body>
-    {{ content }}
+    <div class="bg" aria-hidden="true"></div>
+    <canvas id="graph-canvas" aria-hidden="true"></canvas>
+
+    <header class="nav">
+      <div class="shell nav__inner">
+        <a class="brand" href="/" aria-label="Explainercast home">
+          <span class="wordmark">Explainercast</span>
+        </a>
+
+        <nav class="nav__links" aria-label="Primary">
+          <a class="nav-hide" href="#episodes">Episodes</a>
+          <a class="nav__cta" href="#listen">Subscribe</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="page">
+      <main>
+        {{ content }}
+      </main>
+
+      <footer class="footer">
+        <div class="shell">
+          <div class="footer__inner">
+            <a class="brand" href="/">
+              <span class="wordmark">Explainercast</span>
+            </a>
+
+            <nav class="footer__links" aria-label="Listen elsewhere">
+              <a href="{{ site.podcast_itunes_url }}">Apple Podcasts</a>
+              <a href="{{ site.podcast_youtube_url }}">YouTube</a>
+              <a href="{{ site.podcast_spotify_url }}">Spotify</a>
+              <a href="{{ site.podcast_feed_url }}">RSS feed</a>
+            </nav>
+          </div>
+          <p class="footer__note">
+            Explainercast is hosted by Shane Swenson and Dave Smith.
+            Deep, thorough explanations about physics, engineering, and technology.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <button class="to-top" type="button" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 19V5M5 12l7-7 7 7"/>
+      </svg>
+    </button>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+
+    <script src="/assets/js/graph.js?v={{ site.time | date: '%s' }}" defer></script>
+    <script src="/assets/js/site.js?v={{ site.time | date: '%s' }}" defer></script>
   </body>
 </html>

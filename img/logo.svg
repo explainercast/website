@@ -1,0 +1,30 @@
+<svg viewBox="0 0 64 64" width="64" height="64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Explainercast">
+  <defs>
+    <linearGradient id="edge" x1="6" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4fe3ff"/>
+      <stop offset=".52" stop-color="#7b6cff"/>
+      <stop offset="1" stop-color="#ff5fa2"/>
+    </linearGradient>
+    <linearGradient id="bars" x1="20" y1="44" x2="46" y2="16" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4fe3ff"/>
+      <stop offset="1" stop-color="#b9a7ff"/>
+    </linearGradient>
+    <radialGradient id="core" cx="32" cy="26" r="26" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16224a"/>
+      <stop offset="1" stop-color="#080d1c"/>
+    </radialGradient>
+  </defs>
+  <g fill="none" stroke="url(#edge)" stroke-linecap="round" opacity=".75">
+    <ellipse cx="32" cy="30" rx="28.5" ry="11" transform="rotate(-24 32 30)" stroke-width="1.1"/>
+    <ellipse cx="32" cy="30" rx="28.5" ry="11" transform="rotate(28 32 30)" stroke-width="1.1"/>
+  </g>
+  <path d="M13.81 40.5 A21 21 0 0 1 32 9 A21 21 0 0 1 50.19 40.5 A21 21 0 0 1 21.5 48.19 L11 56.5 Z"
+        fill="url(#core)" stroke="url(#edge)" stroke-width="2.4" stroke-linejoin="round"/>
+  <g fill="url(#bars)">
+    <rect x="18.8" y="25.0" width="3.2" height="10" rx="1.6"/>
+    <rect x="24.6" y="21.0" width="3.2" height="18" rx="1.6"/>
+    <rect x="30.4" y="17.0" width="3.2" height="26" rx="1.6"/>
+    <rect x="36.2" y="22.5" width="3.2" height="15" rx="1.6"/>
+    <rect x="42.0" y="25.5" width="3.2" height="9"  rx="1.6"/>
+  </g>
+</svg>

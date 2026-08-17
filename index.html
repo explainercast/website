@@ -2,101 +2,130 @@
 layout: default
 title: "Explainercast: A deep technical explainer podcast about physics, engineering, and technology"
 ---
- <style>
-  img.subscribe-badge {
-    background: white;
-    padding: 10px;
-    border: 2px solid gray;
-    border-radius: 6px;
-    height: 40px;
-  }
 
-  .post {
-    margin-bottom: 40px;
-    margin-top: 10px;
-  }
+<section class="shell hero">
+  <div class="hero__copy">
+    <h1 class="hero__title">We have some explaining to do.</h1>
 
-  .post-meta {
-      margin: var(--double-space) 0 var(--space);
-      font-size: 80%;
-      color: #444;
-  }
+    <p class="hero__lede">
+      A podcast by technical experts that explains technical topics for a technical audience: physics, technology, weather, AI, cosmology, and more!
+    </p>
 
-  h1.post-title {
-    margin-top: 0;
-    margin-bottom: 5px;
-  }
+    <p class="hero__lede">
+      <strong>Our promise:</strong> we only explain topics we know well. No faking! No AI slop. Just expertise, earned the hard way.</span>
+    </p>
 
-  h1.page-title {
-    font-size: 60px;
-  }
-
-  .post-link {
-      text-decoration: none;
-      color: var(--font-color)
-  }
-
-  .audio-player audio {
-      width: 100%
-  }
-
-  .audio-player {
-      display: flex;
-      align-items: center;
-      flex-flow: row wrap;
-      margin: var(--double-space) 0 0;
-      width: 100%;
-      padding-right: 1rem;
-      margin-top: 10px;
-      margin-bottom: 10px;
-  }
-
-  .audio-player audio {
-    width: 80%;
-  }
-
-  .audio-player a {
-      display: inline-block;
-      padding: .5rem 1rem;
-      font-size: 70%;
-      font-weight: var(--font-medium)
-  }
-
- </style>
-
-<div style="text-align: center; font-size: 20px">
-  <div>
-    <img style="width: 300px; height: 300px" src="{{site.hero_image_url}}" />
   </div>
 
-  <h1 class="page-title">
-    We have some explaining to do.
-  </h1>
-  <h2>Deep, thorough explanations about physics, engineering, and technology.</h2>
-
-  <h3>
-    Our promise: we only explain topics we know well. No faking!
-  </h3>
-
-  <a href="{{ site.podcast_itunes_url }}"><img class="subscribe-badge" src="/img/apple-podcasts-badge.svg" /></a>
-
-  <a href="{{ site.podcast_youtube_url }}"><img class="subscribe-badge" src="/img/listen-on-youtube.png" /></a>
-
-  <a href="{{ site.podcast_spotify_url }}"><img class="subscribe-badge" src="/img/listen-on-spotify.png" /></a>
-
-  <div style="margin-left: auto; margin-right: auto; margin-top: 20px; width: 600px; text-align: left">
-    <p>To listen:</p>
-    <ul>
-      <li style="margin-top: 30px"><b>Click a link above, or...</b></li>
-      <li style="margin-top: 30px"><b>Search for "Explainercast"</b> in your podcasting app</li>
-      <li style="margin-top: 30px">Or <b>subscribe to the feed</b>: <pre>{{site.podcast_feed_url}}</pre></li>
-    </ul>
-
-    <h1 style="margin-top: 80px">Episodes</h1>
-    <div class="episode-list">
-      {% for post in paginator.posts %}
-        {% include post_summary.html show_details="True" %}
-    {% endfor %}
+  <div class="hero__art">
+    <div class="art-glow" aria-hidden="true"></div>
+    <div class="art-card">
+      <img src="{{ site.hero_image_url }}" width="500" height="500"
+           alt="Explainercast cover art" />
     </div>
   </div>
-</div>
+</section>
+
+<section class="shell shell--read section" id="listen">
+  <div class="section-head">
+    <h2>Subscribe</h2>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+
+  <div class="steps">
+    <div class="card step step--primary">
+      <span class="step__n">01</span>
+      <h3>Tap a button</h3>
+      <p>The quickest way in &mdash; pick whichever app you already live in.</p>
+
+      <div class="subscribe">
+        <a class="sub-btn sub-btn--apple" href="{{ site.podcast_itunes_url }}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <rect x="9.6" y="3" width="4.8" height="9" rx="2.4"/>
+            <path d="M6.5 11.5a5.5 5.5 0 0 0 11 0"/>
+            <path d="M12 17v3.4M9.2 20.6h5.6"/>
+          </svg>
+          Apple Podcasts
+        </a>
+
+        <a class="sub-btn sub-btn--youtube" href="{{ site.podcast_youtube_url }}">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M23 7.6a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.5A3 3 0 0 0 1 7.6C.5 9.5.5 12 .5 12s0 2.5.5 4.4a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.4.5-4.4s0-2.5-.5-4.4z"/>
+            <path d="M9.8 15.4V8.6l5.9 3.4-5.9 3.4z" fill="#0b0f1a"/>
+          </svg>
+          YouTube
+        </a>
+
+        <a class="sub-btn sub-btn--spotify" href="{{ site.podcast_spotify_url }}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke-width="1.7"/>
+            <path d="M7 8.6c3.4-.9 7.2-.5 10 1.2"/>
+            <path d="M7.6 12.2c2.8-.7 5.9-.4 8.2 1.1"/>
+            <path d="M8.2 15.6c2.2-.5 4.6-.3 6.4.9"/>
+          </svg>
+          Spotify
+        </a>
+
+        <a class="sub-btn sub-btn--rss" href="{{ site.podcast_feed_url }}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="6.5" cy="17.5" r="1.6" fill="currentColor" stroke="none"/>
+            <path d="M4 11.2a8.8 8.8 0 0 1 8.8 8.8"/>
+            <path d="M4 5.5A14.5 14.5 0 0 1 18.5 20"/>
+          </svg>
+          RSS
+        </a>
+      </div>
+    </div>
+
+    <div class="or-rule" aria-hidden="true"><span>OR</span></div>
+
+    <div class="card step">
+      <span class="step__n">02</span>
+      <h3>Search &ldquo;Explainercast&rdquo;</h3>
+      <p>Every major podcast app carries the show. Search the name and hit subscribe.</p>
+    </div>
+
+    <div class="or-rule" aria-hidden="true"><span>OR</span></div>
+
+    <div class="card step">
+      <span class="step__n">03</span>
+      <h3>Add the feed</h3>
+      <p>Paste this URL into any podcast client that accepts a raw RSS feed.</p>
+      <div class="feed-chip">
+        <code>{{ site.podcast_feed_url }}</code>
+        <button class="copy-btn" type="button" data-copy="{{ site.podcast_feed_url }}" aria-label="Copy feed URL">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="9" y="9" width="12" height="12" rx="2"/>
+            <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="shell shell--read section" id="episodes">
+  <div class="section-head">
+    <h2>Episodes</h2>
+    <span class="count">{{ paginator.total_posts }} total</span>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+
+  <div class="episodes">
+    {% for post in paginator.posts %}
+      {% include post_summary.html show_details="True" %}
+    {% endfor %}
+  </div>
+
+  {% if paginator.previous_page or paginator.next_page %}
+    <nav class="pager" aria-label="Pagination">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}">&larr; {{ site.text.pagination.newer }}</a>
+      {% else %}<span></span>{% endif %}
+
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}">{{ site.text.pagination.older }} &rarr;</a>
+      {% else %}<span></span>{% endif %}
+    </nav>
+  {% endif %}
+</section>
