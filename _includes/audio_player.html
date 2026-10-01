@@ -27,9 +27,11 @@
       <div class="ap__row">
         <span><span class="ap__current">0:00</span> / <span class="ap__duration">{{ include.duration | default: '--:--' }}</span></span>
 
-        <span class="ap__bars" aria-hidden="true">
-          <i></i><i></i><i></i><i></i><i></i>
-        </span>
+        {% unless include.hide_bars %}
+          <span class="ap__bars" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i>
+          </span>
+        {% endunless %}
 
         <a class="ap__dl" href="{{ include.playback_url }}?website_download=true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

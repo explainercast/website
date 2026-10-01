@@ -11,20 +11,10 @@
       </svg>
       <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: site.date_format }}</time>
     </span>
-
-    {% if post.duration %}
-      <span class="chip">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="9"/>
-          <path d="M12 7.5V12l3.2 2"/>
-        </svg>
-        {{ post.duration }}
-      </span>
-    {% endif %}
   </p>
 
   {% if post.file %}
-    {% include audio_player.html playback_url=post.file duration=post.duration %}
+    {% include audio_player.html playback_url=post.file duration=post.duration hide_bars=true %}
   {% endif %}
 
   <div class="post-summary" markdown="1">

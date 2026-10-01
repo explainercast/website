@@ -31,14 +31,11 @@ description: "A podcast by technical experts explaining technical topics for a t
 <section class="shell shell--read section" id="listen">
   <div class="section-head">
     <h2>Subscribe</h2>
-    <span class="rule" aria-hidden="true"></span>
   </div>
 
   <div class="steps">
     <div class="card step step--primary">
-      <span class="step__n">01</span>
-      <h3>Tap a button</h3>
-      <p>The quickest way in &mdash; pick whichever app you already live in.</p>
+      <h3>Subscribe on a popular platform</h3>
 
       <div class="subscribe">
         <a class="sub-btn sub-btn--apple" href="{{ site.podcast_itunes_url }}">
@@ -68,31 +65,19 @@ description: "A podcast by technical experts explaining technical topics for a t
           Spotify
         </a>
 
-        <a class="sub-btn sub-btn--rss" href="{{ site.podcast_feed_url }}">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-            <circle cx="6.5" cy="17.5" r="1.6" fill="currentColor" stroke="none"/>
-            <path d="M4 11.2a8.8 8.8 0 0 1 8.8 8.8"/>
-            <path d="M4 5.5A14.5 14.5 0 0 1 18.5 20"/>
-          </svg>
-          RSS
-        </a>
       </div>
     </div>
 
     <div class="or-rule" aria-hidden="true"><span>OR</span></div>
 
     <div class="card step">
-      <span class="step__n">02</span>
-      <h3>Search &ldquo;Explainercast&rdquo;</h3>
-      <p>Every major podcast app carries the show. Search the name and hit subscribe.</p>
+      <h3>Search &ldquo;Explainercast&rdquo; in any podcast app</h3>
     </div>
 
     <div class="or-rule" aria-hidden="true"><span>OR</span></div>
 
     <div class="card step">
-      <span class="step__n">03</span>
-      <h3>Add the feed</h3>
-      <p>Paste this URL into any podcast client that accepts a raw RSS feed.</p>
+      <h3>Paste this URL into any podcast app:</h3>
       <div class="feed-chip">
         <code>{{ site.podcast_feed_url }}</code>
         <button class="copy-btn" type="button" data-copy="{{ site.podcast_feed_url }}" aria-label="Copy feed URL">
@@ -109,8 +94,6 @@ description: "A podcast by technical experts explaining technical topics for a t
 <section class="shell shell--read section" id="episodes">
   <div class="section-head">
     <h2>Episodes</h2>
-    <span class="count">{{ paginator.total_posts }} total</span>
-    <span class="rule" aria-hidden="true"></span>
   </div>
 
   <div class="episodes">
