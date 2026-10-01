@@ -729,6 +729,28 @@ pre, code { font-family: var(--font-mono); }
 .ap__dl svg { width: 13px; height: 13px; }
 .ap__dl:hover { color: var(--c-cyan); }
 
+.ap__tools {
+  display: inline-flex;
+  align-items: center;
+  gap: .9rem;
+}
+
+.ap__speed {
+  min-width: 3.4em;
+  padding: .2rem .5rem;
+  border: 1px solid var(--hairline-2);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-mute);
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .04em;
+  cursor: pointer;
+  transition: color .25s ease, border-color .25s ease;
+}
+.ap__speed:hover { color: var(--c-cyan); border-color: rgba(79, 227, 255, .45); }
+.ap__speed.is-altered { color: var(--c-cyan); }
+
 /* --- Pagination --------------------------------------------------------- */
 .pager {
   display: flex;

@@ -103,6 +103,25 @@
   }
 
   var players = [];
+  var SPEEDS = [1, 1.25, 1.5, 1.75, 2, 0.75];
+  var speedKey = 'ec-playback-rate';
+  var rate = 1;
+  try { rate = parseFloat(localStorage.getItem(speedKey)) || 1; } catch (err) { /* storage blocked */ }
+  if (SPEEDS.indexOf(rate) < 0) rate = 1;
+  var speedBtns = [];
+
+  function setRate(next) {
+    rate = next;
+    try { localStorage.setItem(speedKey, String(rate)); } catch (err) { /* storage blocked */ }
+    players.forEach(function (a) { a.playbackRate = a.defaultPlaybackRate = rate; });
+    speedBtns.forEach(paintSpeed);
+  }
+
+  function paintSpeed(btn) {
+    btn.textContent = rate + '\u00d7';
+    btn.setAttribute('aria-label', 'Playback speed ' + rate + 'x');
+    btn.classList.toggle('is-altered', rate !== 1);
+  }
 
   Array.prototype.forEach.call(document.querySelectorAll('.audio-player'), function (shell) {
     var audio = shell.querySelector('audio');
@@ -116,11 +135,21 @@
     var knob = ui.querySelector('.ap__knob');
     var cur = ui.querySelector('.ap__current');
     var dur = ui.querySelector('.ap__duration');
+    var speedBtn = ui.querySelector('.ap__speed');
 
     // hand control to the custom UI only once we know scripting works
     audio.removeAttribute('controls');
     shell.classList.add('is-enhanced');
     players.push(audio);
+    audio.playbackRate = audio.defaultPlaybackRate = rate;
+
+    if (speedBtn) {
+      speedBtns.push(speedBtn);
+      paintSpeed(speedBtn);
+      speedBtn.addEventListener('click', function () {
+        setRate(SPEEDS[(SPEEDS.indexOf(rate) + 1) % SPEEDS.length]);
+      });
+    }
 
     function paint() {
       var d = audio.duration;
