@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Episode 32: TODO CHANGE THIS TITLE"
+title: "Episode 32: Intro to Encryption"
 date: 2026-10-27 06:00:00 -0700
 guid: 122fe984-fe32-4ae7-bc83-66f74cabd3e8
 duration: "58:24"
